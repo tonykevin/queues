@@ -15,6 +15,10 @@ app.use(express.static(publicPath))
 // communication with the backend
 const io = socketIO(server)
 
+io.on('connection', () => {
+  console.log('connected user')
+})
+
 server.listen(port, (err) => {
   if (err) throw new Error(err)
   console.log(`server running in port ${port}`)
