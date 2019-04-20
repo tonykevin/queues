@@ -1,9 +1,15 @@
-# Notas:
+# Socket
 
-Este es un pequeño servidor de express listo para ejecutarse y servir la carpeta public en la web.
+Learning to use Socket.io
 
-Recuerden que deben de reconstruir los módulos de node con el comando
+## Resources
 
-```
-npm install
-```
+* [Node: De cero a experto](https://www.udemy.com/course/node-de-cero-a-experto/)
+
+## Contributors
+
+* [Fernando Herrera](https://github.com/Klerith)
+
+## License
+
+MIT

@@ -1,15 +1,19 @@
 {
-    "name": "08-socket-colas",
+    "name": "socket",
     "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
+    "description": "Learning to use Socket.io",
+    "repository": "git@github.com:tonykevin/socket.git",
+    "author": "tonykevin <h@tonykevin.com>",
+    "main": "server",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server/server.js"
+        "start": "node server",
+        "dev": "nodemon server"
     },
-    "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "dependencies": {
-        "express": "^4.16.3"
+        "express": "^4.16.4"
+    },
+    "devDependencies": {
+        "nodemon": "^1.18.11"
     }
 }
