@@ -11,6 +11,8 @@ socket.on('disconnect', () => {
 socket.emit('sendMessage', {
   user: 'Tony',
   message: 'Hello world'
+}, (res) => {
+  console.log('server response:', res)
 })
 
 socket.on('sendMessage', message => {
