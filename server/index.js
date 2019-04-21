@@ -15,8 +15,12 @@ app.use(express.static(publicPath))
 // communication with the backend
 const io = socketIO(server)
 
-io.on('connection', () => {
+io.on('connection', client => {
   console.log('connected user')
+
+  client.on('disconnect', () => {
+    console.log('disconnected user')
+  })
 })
 
 server.listen(port, (err) => {
