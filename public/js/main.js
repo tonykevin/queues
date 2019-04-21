@@ -12,3 +12,7 @@ socket.emit('sendMessage', {
   user: 'Tony',
   message: 'Hello world'
 })
+
+socket.on('sendMessage', message => {
+  console.log('Server:', message)
+})
