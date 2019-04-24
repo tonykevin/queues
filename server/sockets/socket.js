@@ -1,4 +1,7 @@
-const { io } = require('../index')
+const { io } = require('../')
+const { TicketControl } = require('../classes')
+
+const ticketControl = new TicketControl()
 
 io.on('connection', client => {
   console.log('connected user')
