@@ -9,4 +9,8 @@ io.on('connection', client => {
     console.log(next)
     callback(next)
   })
+
+  client.emit('currentState', {
+    currentTicket: ticketControl.lastTicket
+  })
 })
