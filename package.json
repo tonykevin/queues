@@ -7,7 +7,7 @@
     "main": "server",
     "scripts": {
         "start": "node server",
-        "dev": "nodemon server"
+        "dev": "nodemon server -e js,html"
     },
     "license": "MIT",
     "dependencies": {

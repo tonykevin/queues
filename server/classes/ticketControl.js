@@ -2,10 +2,11 @@ const { writeFileSync } = require('fs')
 const data = require('../data/data.json')
 
 class TicketControl {
+  list = 10
+
   constructor () {
     this.last = 0
     this.today = new Date().getDate()
-    console.log(data)
 
     if (data.today === this.today) {
       this.last = data.last
