@@ -14,7 +14,20 @@ class TicketControl {
     }
   }
 
+  next () {
+    this.last += 1
+    this.save()
+
+    return `Ticket ${this.last}`
+  }
+
   restartCount () {
+    this.last = 0
+    console.log('system has been initialized')
+    this.save()
+  }
+
+  save () {
     let jsonData = {
       last: this.last,
       today: this.today
@@ -22,7 +35,6 @@ class TicketControl {
 
     let jsonDataString = JSON.stringify(jsonData)
     writeFileSync('./server/data/data.json', jsonDataString)
-    console.log('system has been initialized')
   }
 }
 
