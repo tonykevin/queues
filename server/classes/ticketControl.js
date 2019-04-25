@@ -7,13 +7,35 @@ class TicketControl {
     this.last = 0
     this.today = new Date().getDate()
     this.tickets = []
+    this.last4 = []
 
     if (data.today === this.today) {
       this.last = data.last
       this.tickets = data.tickets
+      this.last4 = data.last4
     } else {
       this.restartCount()
     }
+  }
+
+  attendTicket (desktop) {
+    if (this.tickets.length) {
+      return 'No hay tickets'
+    }
+
+    let ticketNumber = this.ticket[0].number
+    this.tickets.shift()
+
+    let attendTicket = new Ticket(desktop, ticketNumber)
+
+    this.last4.unshift(attendTicket)
+
+    if (this.last4.length > 4) {
+      this.last4.splice(-1, 1)
+    }
+
+    console.log('last4', this.last4)
+    this.save()
   }
 
   get lastTicket () {
@@ -32,6 +54,7 @@ class TicketControl {
   restartCount () {
     this.last = 0
     this.tickets = []
+    this.last4 = []
 
     console.log('system has been initialized')
     this.save()
@@ -41,7 +64,8 @@ class TicketControl {
     let jsonData = {
       last: this.last,
       today: this.today,
-      tickets: this.tickets
+      tickets: this.tickets,
+      last4: this.last4
     }
 
     let jsonDataString = JSON.stringify(jsonData)
