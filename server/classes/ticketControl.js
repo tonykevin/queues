@@ -36,6 +36,8 @@ class TicketControl {
 
     console.log('last4', this.last4)
     this.save()
+
+    return attendTicket
   }
 
   get lastTicket () {

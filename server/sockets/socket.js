@@ -16,10 +16,7 @@ io.on('connection', client => {
 
   client.on('attendTicket', (data, callback) => {
     if (!data.desktop) {
-      return callback({
-        err: true,
-        message: 'El escritorio es necesario'
-      })
+      throw new Error('El escritorio es necesario')
     }
 
     let attendTicket = ticketControl.attendTicket(data.desktop)

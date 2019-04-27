@@ -4,12 +4,18 @@ const seachParams = new URLSearchParams(window.location.search)
 const label = $('small')
 
 if (!seachParams.has('desktop')) {
-  window.location = 'index.html'
+  window.location = '/'
 
   throw new Error('El escritorio es necesario')
 }
 
-let desktop = seachParams.get('desktop')
+let desktop = Number(seachParams.get('desktop'))
+
+if (!desktop) {
+  window.location = '/'
+
+  throw new Error('El valor de escritorio no es un entero')
+}
 
 console.log(desktop)
 $('h1').text(`Escritorio ${desktop}`)
