@@ -19,11 +19,11 @@ class TicketControl {
   }
 
   attendTicket (desktop) {
-    if (this.tickets.length) {
+    if (!this.tickets.length) {
       return 'No hay tickets'
     }
 
-    let ticketNumber = this.ticket[0].number
+    let ticketNumber = this.tickets[0].number
     this.tickets.shift()
 
     let attendTicket = new Ticket(desktop, ticketNumber)

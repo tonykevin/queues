@@ -13,4 +13,16 @@ io.on('connection', client => {
   client.emit('currentState', {
     currentTicket: ticketControl.lastTicket
   })
+
+  client.on('attendTicket', (data, callback) => {
+    if (!data.desktop) {
+      return callback({
+        err: true,
+        message: 'El escritorio es necesario'
+      })
+    }
+
+    let attendTicket = ticketControl.attendTicket(data.desktop)
+    callback(attendTicket)
+  })
 })
