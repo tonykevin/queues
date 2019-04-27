@@ -17,7 +17,6 @@ if (!desktop) {
   throw new Error('El valor de escritorio no es un entero')
 }
 
-console.log(desktop)
 $('h1').text(`Escritorio ${desktop}`)
 
 $('button').on('click', () => {

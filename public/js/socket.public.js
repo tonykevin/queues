@@ -14,8 +14,11 @@ const lblDesktops = [
   $('#lblDesktop4')
 ]
 
-socket.on('currentState', (data) => {
-  updateHtml(data.last4)
+socket.on('last4Tickets', ({ last4Tickets }) => {
+  const audio = new Audio('audio/new-ticket.mp3')
+  audio.play()
+
+  updateHtml(last4Tickets)
 })
 
 function updateHtml (last4) {

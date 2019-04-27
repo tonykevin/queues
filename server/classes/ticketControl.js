@@ -34,7 +34,6 @@ class TicketControl {
       this.last4.splice(-1, 1)
     }
 
-    console.log('last4', this.last4)
     this.save()
 
     return attendTicket

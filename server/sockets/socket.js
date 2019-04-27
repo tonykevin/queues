@@ -6,13 +6,11 @@ const ticketControl = new TicketControl()
 io.on('connection', client => {
   client.on('nextTicket', (data, callback) => {
     let next = ticketControl.next()
-    console.log(next)
     callback(next)
   })
 
   client.emit('currentState', {
-    currentTicket: ticketControl.lastTicket,
-    last4: ticketControl.last4Tickets
+    currentTicket: ticketControl.lastTicket
   })
 
   client.on('attendTicket', (data, callback) => {
@@ -22,5 +20,9 @@ io.on('connection', client => {
 
     let attendTicket = ticketControl.attendTicket(data.desktop)
     callback(attendTicket)
+
+    client.broadcast.emit('last4Tickets', {
+      last4Tickets: ticketControl.last4Tickets
+    })
   })
 })
