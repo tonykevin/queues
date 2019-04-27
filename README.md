@@ -1,6 +1,6 @@
-# Socket
+# Queues
 
-Learning to use Socket.io
+Implement queues with socket.
 
 ## Resources
 

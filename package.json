@@ -1,8 +1,8 @@
 {
-    "name": "socket",
-    "version": "1.0.0",
-    "description": "Learning to use Socket.io",
-    "repository": "git@github.com:tonykevin/socket.git",
+    "name": "queues",
+    "version": "2.0.0",
+    "description": "Implement queues with socket.",
+    "repository": "git@github.com:tonykevin/queues.git",
     "author": "tonykevin <h@tonykevin.com>",
     "main": "server",
     "scripts": {
