@@ -44,6 +44,10 @@ class TicketControl {
     return this.last
   }
 
+  get last4Tickets () {
+    return this.last4
+  }
+
   next () {
     this.last += 1
     let ticket = new Ticket(null, this.last)

@@ -11,7 +11,8 @@ io.on('connection', client => {
   })
 
   client.emit('currentState', {
-    currentTicket: ticketControl.lastTicket
+    currentTicket: ticketControl.lastTicket,
+    last4: ticketControl.last4Tickets
   })
 
   client.on('attendTicket', (data, callback) => {
